@@ -1,9 +1,14 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive/hive.dart';
 import 'package:studet_clean_arch/config/constants/hive_table_constant.dart';
 import 'package:studet_clean_arch/features/batch/Domain/entity/batch_entity.dart';
 import 'package:uuid/uuid.dart';
 
 part 'batch_hive_model.g.dart';
+
+final batchHiveModelProvider = Provider(
+  (ref) => BatchHiveModel.empty(),
+);
 
 @HiveType(typeId: HiveTableConstant.batchTableId)
 class BatchHiveModel {

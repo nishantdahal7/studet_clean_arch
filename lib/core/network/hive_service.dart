@@ -1,3 +1,4 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:studet_clean_arch/features/auth/Data/model/student_hive_model.dart';
@@ -5,6 +6,10 @@ import 'package:studet_clean_arch/features/batch/Data/model/batch_hive_model.dar
 import 'package:studet_clean_arch/features/course/Data/model/course_hive_model.dart';
 
 import '../../config/constants/hive_table_constant.dart';
+
+final hiveServiceProvider = Provider(
+  (ref) => HiveService(),
+);
 
 class HiveService {
   Future<void> init() async {
